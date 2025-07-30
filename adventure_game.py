@@ -20,6 +20,26 @@ def forest_path():
         print("\nInvalid choice. Please try again.")
         forest_path()
 
+# ...existing code...
+
+def cave_path():
+    print("\nThe cave is cold and echoing. You can barely see anything inside.")
+    print("Do you want to:")
+    print("1. Light a torch")
+    print("2. Proceed in the dark")
+    choice = input("Enter 1 to light a torch or 2 to proceed in the dark: ")
+    if choice == "1":
+        print("\nWith the torch lit, you see ancient carvings on the walls and safely navigate deeper.")
+        print("You discover a chest filled with gold and jewels. You found the legendary treasure!")
+        print("Congratulations, you win!")
+    elif choice == "2":
+        print("\nYou stumble in the darkness and fall into a pit. Your adventure ends here.")
+        print("Game Over. Better luck next time!")
+    else:
+        print("\nInvalid choice. Please try again.")
+        cave_path()
+
+# ...existing code...
 def start_game():
     print("\nYour quest: Find the legendary treasure hidden in the ancient land!")
     name = input("What is your name, brave explorer? ")
@@ -30,14 +50,14 @@ def start_game():
     choice = input("Enter 1 for forest or 2 for cave: ")
     if choice == "1":
         print("\nYou head into the dark forest...")
-        # forest_path() will be called here in Task 3
-        forest_path()  # Call the forest_path function hereI
+        forest_path()
     elif choice == "2":
         print("\nYou step into the mysterious cave...")
-        # cave_path() will be called here in Task 4
+        cave_path()  # Call the cave_path function here
     else:
         print("\nInvalid choice. Please try again.")
         start_game()
 
+# ...existing code...
 # Call the function to start the game
 start_game()
