@@ -10,17 +10,15 @@ def forest_path():
     if choice == "1":
         print("\nYou follow the river and discover a hidden waterfall. Behind it, you find a secret cave!")
         print("Congratulations! You are one step closer to the treasure.")
-        # You can add more story or call cave_path() here
+        cave_path()  # Continue the adventure in the cave
     elif choice == "2":
         print("\nYou climb the tree and spot a clearing with strange markings on the ground.")
         print("Suddenly, the branch breaks and you fall, but you find a mysterious map on the ground.")
         print("The map leads you toward the treasure!")
-        # You can add more story or next steps here
+        cave_path()  # Continue the adventure in the cave
     else:
         print("\nInvalid choice. Please try again.")
         forest_path()
-
-# ...existing code...
 
 def cave_path():
     print("\nThe cave is cold and echoing. You can barely see anything inside.")
@@ -32,14 +30,26 @@ def cave_path():
         print("\nWith the torch lit, you see ancient carvings on the walls and safely navigate deeper.")
         print("You discover a chest filled with gold and jewels. You found the legendary treasure!")
         print("Congratulations, you win!")
+        restart_game()
     elif choice == "2":
         print("\nYou stumble in the darkness and fall into a pit. Your adventure ends here.")
         print("Game Over. Better luck next time!")
+        restart_game()
     else:
         print("\nInvalid choice. Please try again.")
         cave_path()
 
-# ...existing code...
+def restart_game():
+    choice = input("\nWould you like to play again? (yes/no): ").lower()
+    if choice == "yes":
+        start_game()
+    elif choice == "no":
+        print("\nThank you for playing the Adventure Game. Goodbye!")
+        exit()
+    else:
+        print("\nInvalid choice. Please try again.")
+        restart_game()
+
 def start_game():
     print("\nYour quest: Find the legendary treasure hidden in the ancient land!")
     name = input("What is your name, brave explorer? ")
@@ -53,11 +63,10 @@ def start_game():
         forest_path()
     elif choice == "2":
         print("\nYou step into the mysterious cave...")
-        cave_path()  # Call the cave_path function here
+        cave_path()
     else:
         print("\nInvalid choice. Please try again.")
         start_game()
 
-# ...existing code...
 # Call the function to start the game
 start_game()
